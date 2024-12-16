@@ -1,0 +1,96 @@
+@section('page-header', 'Shoes')
+@push('breadcumb-backend')
+    <li class="breadcrumb-item">Tabel</li>
+    <li class="breadcrumb-item">Sepatu</li>
+    <li class="breadcrumb-item">Tambah Sepatu</li>
+@endpush
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card-title justify-content-center">
+                <h3>Tambah Sepatu</h3>
+            </div>
+            <div class="card shadow">
+                <div class="card-body">
+                    <form wire:submit.prevent="store" method="POST" enctype="multipart/form-data">
+                        <label>Nama Sepatu</label>
+                        <input type="text" wire:model.live="name" class="form-control @error('name') is-invalid @enderror mb-2">
+
+                        <div class="row justify-content-between">
+                            <div class="col-md-6">
+                                <label>Ukuran</label>
+                                <input type="number" wire:model.live="size" class="form-control @error('size') is-invalid @enderror mb-2">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>Harga</label>
+                                <input type="number" wire:model.live="price" class="form-control @error('price') is-invalid @enderror mb-2">
+                            </div>
+                        </div>
+
+                        <label>Stok</label>
+                        <input type="text" wire:model.live="stock" class="form-control @error('stock') is-invalid @enderror mb-2">
+
+                        <label>Deskripsi</label>
+                        <textarea wire:model.live="description" cols="30" rows="5" class="form-control @error('description') is-invalid @enderror mb-2"></textarea>
+
+                        <label>Gambar</label>
+                        <input type="file" wire:model.live="image" class="form-control @error('image') is-invalid @enderror mb-2" multiple>
+
+                        <button class="btn btn-success">Tambah</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section('page-header', 'Shoes')
+@push('breadcumb-backend')
+    <li class="breadcrumb-item">Tabel</li>
+    <li class="breadcrumb-item">Sepatu</li>
+@endpush
+<div>
+
+    <section class="section">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex justify-content-end align-items-center">
+                    <a href="{{ route('shoes.create') }}" wire:navigate class="btn btn-success btn-md">Tambah</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped" id="table1">
+                    <thead>
+                        <tr>
+                            <th>Nama Sepatu</th>
+                            <th>Ukuran</th>
+                            <th>Harga</th>
+                            <th>Stok</th>
+                            <th>Deskripsi</th>
+                            <th>Gambar</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Graiden</td>
+                            <td>vehicula.aliquet@semconsequat.co.uk</td>
+                            <td>076 4820 8838</td>
+                            <td>Offenburg</td>
+                            <td>Offenburg</td>
+                            <td>
+                                <span class="badge bg-success">Active</span>
+                            </td>
+                            <td>
+                                <span class="badge bg-success">Active</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>
